@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/Becojo/unicorn.cr">
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/doc.js"></script>
+  <title>Unicorn::Uc - github.com/Becojo/unicorn.cr</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/Becojo/unicorn.cr/Unicorn" data-name="unicorn">
+      <a href="../Unicorn.html">Unicorn</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/Becojo/unicorn.cr/Unicorn/Uc" data-name="unicorn::uc">
+      <a href="../Unicorn/Uc.html">Uc</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/Becojo/unicorn.cr/Unicorn/UcError" data-name="unicorn::ucerror">
+      <a href="../Unicorn/UcError.html">UcError</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/Becojo/unicorn.cr/Unicorn/UcError/Error" data-name="unicorn::ucerror::error">
+      <a href="../Unicorn/UcError/Error.html">Error</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Unicorn::Uc
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Unicorn/Uc.html">Unicorn::Uc</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Unicorn engine class</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28arch%3AInt32%2Cmode%3AInt32%29-class-method" class="signature"><strong>.new</strong>(arch : Int32, mode : Int32)</a>
+        
+          <div class="summary"><p>Create new instance of unicorn engine.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#close-instance-method" class="signature"><strong>#close</strong></a>
+        
+          <div class="summary"><p>Close a Unicorn engine instance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#emu_start%28begin_addr%3AInt%2Cend_addr%3AInt%2Ctimeout%3AInt%3D0%2Ccount%3AInt%3D0%29-instance-method" class="signature"><strong>#emu_start</strong>(begin_addr : Int, end_addr : Int, timeout : Int = <span class="n">0</span>, count : Int = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Emulate machine code in a specific duration of time.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#emu_stop-instance-method" class="signature"><strong>#emu_stop</strong></a>
+        
+          <div class="summary"><p>Stop the emulation</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#finalize-instance-method" class="signature"><strong>#finalize</strong></a>
+        
+          <div class="summary"><p>Close a Unicorn engine instance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_block%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method" class="signature"><strong>#hook_block</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64 -> ) : UcLib::UcHook</a>
+        
+          <div class="summary"><p>Add hook to trace basic blocks..</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_code%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method" class="signature"><strong>#hook_code</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64 -> ) : UcLib::UcHook</a>
+        
+          <div class="summary"><p>Add hook to trace instructions.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_del%28handle%3AUcLib%3A%3AUcHook%29-instance-method" class="signature"><strong>#hook_del</strong>(handle : UcLib::UcHook)</a>
+        
+          <div class="summary"><p>Unregister (remove) a hook callback.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_insn_in%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64-%3EUInt64%29%3AUcLib%3A%3AUcHook-instance-method" class="signature"><strong>#hook_insn_in</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64 -> UInt64) : UcLib::UcHook</a>
+        
+          <div class="summary"><p>Add hook to trace X86 <code>in</code> instruction</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_insn_out%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64%2CUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method" class="signature"><strong>#hook_insn_out</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64, UInt64 -> ) : UcLib::UcHook</a>
+        
+          <div class="summary"><p>Add hook to trace X86 <code>out</code> instruction</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_intr%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method" class="signature"><strong>#hook_intr</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64 -> ) : UcLib::UcHook</a>
+        
+          <div class="summary"><p>Add hook to trace interrupts.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_mem%28type%3AInt%2Cbegin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64%2CUInt64%2CUInt64-%3EBool%3F%29%3AUcLib%3A%3AUcHook-instance-method" class="signature"><strong>#hook_mem</strong>(type : Int, begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64, UInt64, UInt64 -> Bool?) : UcLib::UcHook</a>
+        
+          <div class="summary"><p>Add hook to trace memory read/write</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hook_syscall%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3A-%3E%29%3AUcLib%3A%3AUcHook-instance-method" class="signature"><strong>#hook_syscall</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback :  -> ) : UcLib::UcHook</a>
+        
+          <div class="summary"><p>Add hook to trace syscall.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_map%28address%3AInt%2Csize%3AInt%2Cperms%3AInt%3DUC_PROT_ALL%29-instance-method" class="signature"><strong>#mem_map</strong>(address : Int, size : Int, perms : Int = <span class="t">UC_PROT_ALL</span>)</a>
+        
+          <div class="summary"><p>Map memory in for emulation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_protect%28address%3AInt%2Csize%3AInt%2Cperms%3AInt%29-instance-method" class="signature"><strong>#mem_protect</strong>(address : Int, size : Int, perms : Int)</a>
+        
+          <div class="summary"><p>Set memory permissions for emulation memory.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_read%28address%3AInt%2Csize%3AInt%29%3AArray%28UInt8%29-instance-method" class="signature"><strong>#mem_read</strong>(address : Int, size : Int) : Array(UInt8)</a>
+        
+          <div class="summary"><p>Read a range of bytes in memory.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_regions%3AArray%28Tuple%28UInt64%2CUInt64%2CUInt32%29%29-instance-method" class="signature"><strong>#mem_regions</strong> : Array(Tuple(UInt64, UInt64, UInt32))</a>
+        
+          <div class="summary"><p>Retrieve all memory regions mapped by <code><a href="../Unicorn/Uc.html#mem_map%28address%3AInt%2Csize%3AInt%2Cperms%3AInt%3DUC_PROT_ALL%29-instance-method">#mem_map</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_unmap%28address%3AInt%2Csize%3AInt%29-instance-method" class="signature"><strong>#mem_unmap</strong>(address : Int, size : Int)</a>
+        
+          <div class="summary"><p>Unmap a region of emulation memory.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_write%28address%3AInt%2Ccode%3AArray%28UInt8%29%29-instance-method" class="signature"><strong>#mem_write</strong>(address : Int, code : Array(UInt8))</a>
+        
+          <div class="summary"><p>Write to a range of bytes in memory.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_write%28address%3AInt%2Ccode%3AString%29-instance-method" class="signature"><strong>#mem_write</strong>(address : Int, code : String)</a>
+        
+          <div class="summary"><p>Write to a range of bytes in memory from a String.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reg_read%28reg%3AInt%29%3AInt-instance-method" class="signature"><strong>#reg_read</strong>(reg : Int) : Int</a>
+        
+          <div class="summary"><p>Read register value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reg_write%28reg%3AInt%2Cvalue%3AInt%29-instance-method" class="signature"><strong>#reg_write</strong>(reg : Int, value : Int)</a>
+        
+          <div class="summary"><p>Write to register.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new&#40;arch:Int32,mode:Int32&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(arch : Int32, mode : Int32)
+
+        <a class="method-permalink" href="#new%28arch%3AInt32%2Cmode%3AInt32%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Create new instance of unicorn engine.</p>
+
+<ul><li><em>arch</em>: architecture type (UC_ARCH_*)</li><li><em>mode</em>: hardware mode. This is combined of UC_MODE_*</li></ul></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="close-instance-method">
+      <div class="signature">
+        
+        def <strong>close</strong>
+
+        <a class="method-permalink" href="#close-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Close a Unicorn engine instance.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="emu_start&#40;begin_addr:Int,end_addr:Int,timeout:Int&#61;0,count:Int&#61;0&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>emu_start</strong>(begin_addr : Int, end_addr : Int, timeout : Int = <span class="n">0</span>, count : Int = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#emu_start%28begin_addr%3AInt%2Cend_addr%3AInt%2Ctimeout%3AInt%3D0%2Ccount%3AInt%3D0%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Emulate machine code in a specific duration of time.</p>
+
+<ul><li><em>begin_addr</em>: address where emulation starts</li><li><em>end_addr</em>: address where emulation stops (i.e when this address is hit)</li><li><em>timeout</em>: duration to emulate the code (in microseconds). When this value is 0, we will emulate the code in infinite time, until the code is finished.</li><li><em>count</em>: the number of instructions to be emulated. When this value is 0, we will emulate all the code available, until the code is finished.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="emu_stop-instance-method">
+      <div class="signature">
+        
+        def <strong>emu_stop</strong>
+
+        <a class="method-permalink" href="#emu_stop-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Stop the emulation</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="finalize-instance-method">
+      <div class="signature">
+        
+        def <strong>finalize</strong>
+
+        <a class="method-permalink" href="#finalize-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Close a Unicorn engine instance.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_block&#40;begin_addr:Int&#61;1,end_addr&#61;0,&amp;callback:UInt64,UInt64-&gt;&#41;:UcLib::UcHook-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_block</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64 -> ) : UcLib::UcHook
+
+        <a class="method-permalink" href="#hook_block%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Add hook to trace basic blocks..</p>
+
+<p>If <em>start</em> &lt; <em>end</em>, the <em>callback</em> is called only if related address is in range.</p>
+
+<p>The block is of the form <code>{ |address, size|  }</code></p>
+
+<p>Returns <code>UcLib::UcHook</code> that can be used in <code><a href="../Unicorn/Uc.html#hook_del%28handle%3AUcLib%3A%3AUcHook%29-instance-method">#hook_del</a></code> to remove the hook.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_code&#40;begin_addr:Int&#61;1,end_addr&#61;0,&amp;callback:UInt64,UInt64-&gt;&#41;:UcLib::UcHook-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_code</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64 -> ) : UcLib::UcHook
+
+        <a class="method-permalink" href="#hook_code%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Add hook to trace instructions.</p>
+
+<p>If <em>start</em> &lt; <em>end</em>, the <em>callback</em> is called only if related address is in range.</p>
+
+<p>The block is of the form <code>{ |address, size|  }</code></p>
+
+<p>Returns <code>UcLib::UcHook</code> that can be used in <code><a href="../Unicorn/Uc.html#hook_del%28handle%3AUcLib%3A%3AUcHook%29-instance-method">#hook_del</a></code> to remove the hook.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_del&#40;handle:UcLib::UcHook&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_del</strong>(handle : UcLib::UcHook)
+
+        <a class="method-permalink" href="#hook_del%28handle%3AUcLib%3A%3AUcHook%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Unregister (remove) a hook callback.</p>
+
+<ul><li><em>handle</em>: Value returned by one of the hook functions</li></ul></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_insn_in&#40;begin_addr:Int&#61;1,end_addr&#61;0,&amp;callback:UInt64,UInt64-&gt;UInt64&#41;:UcLib::UcHook-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_insn_in</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64 -> UInt64) : UcLib::UcHook
+
+        <a class="method-permalink" href="#hook_insn_in%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64-%3EUInt64%29%3AUcLib%3A%3AUcHook-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Add hook to trace X86 <code>in</code> instruction</p>
+
+<p>If <em>start</em> &lt; <em>end</em>, the <em>callback</em> is called only if related address is in range.</p>
+
+<p>The block is of the form <code>{ |port, size| value }</code></p>
+
+<p>Returns <code>UcLib::UcHook</code> that can be used in <code><a href="../Unicorn/Uc.html#hook_del%28handle%3AUcLib%3A%3AUcHook%29-instance-method">#hook_del</a></code> to remove the hook.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_insn_out&#40;begin_addr:Int&#61;1,end_addr&#61;0,&amp;callback:UInt64,UInt64,UInt64-&gt;&#41;:UcLib::UcHook-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_insn_out</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64, UInt64 -> ) : UcLib::UcHook
+
+        <a class="method-permalink" href="#hook_insn_out%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64%2CUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Add hook to trace X86 <code>out</code> instruction</p>
+
+<p>If <em>start</em> &lt; <em>end</em>, the <em>callback</em> is called only if related address is in range.</p>
+
+<p>The block is of the form <code>{ |port, size, value|  }</code></p>
+
+<p>Returns <code>UcLib::UcHook</code> that can be used in <code><a href="../Unicorn/Uc.html#hook_del%28handle%3AUcLib%3A%3AUcHook%29-instance-method">#hook_del</a></code> to remove the hook.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_intr&#40;begin_addr:Int&#61;1,end_addr&#61;0,&amp;callback:UInt64-&gt;&#41;:UcLib::UcHook-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_intr</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64 -> ) : UcLib::UcHook
+
+        <a class="method-permalink" href="#hook_intr%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64-%3E%29%3AUcLib%3A%3AUcHook-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Add hook to trace interrupts.</p>
+
+<p>If <em>start</em> &lt; <em>end</em>, the <em>callback</em> is called only if related address is in range.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_mem&#40;type:Int,begin_addr:Int&#61;1,end_addr&#61;0,&amp;callback:UInt64,UInt64,UInt64,UInt64-&gt;Bool?&#41;:UcLib::UcHook-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_mem</strong>(type : Int, begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback : UInt64, UInt64, UInt64, UInt64 -> Bool?) : UcLib::UcHook
+
+        <a class="method-permalink" href="#hook_mem%28type%3AInt%2Cbegin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3AUInt64%2CUInt64%2CUInt64%2CUInt64-%3EBool%3F%29%3AUcLib%3A%3AUcHook-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Add hook to trace memory read/write</p>
+
+<p>If <em>start</em> &lt; <em>end</em>, the <em>callback</em> is called only if related address is in range.</p>
+
+<p>The block is of the form <code>{ |address, size|  }</code></p>
+
+<p>Returns <code>UcLib::UcHook</code> that can be used in <code><a href="../Unicorn/Uc.html#hook_del%28handle%3AUcLib%3A%3AUcHook%29-instance-method">#hook_del</a></code> to remove the hook.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hook_syscall&#40;begin_addr:Int&#61;1,end_addr&#61;0,&amp;callback:-&gt;&#41;:UcLib::UcHook-instance-method">
+      <div class="signature">
+        
+        def <strong>hook_syscall</strong>(begin_addr : Int = <span class="n">1</span>, end_addr = <span class="n">0</span>, &callback :  -> ) : UcLib::UcHook
+
+        <a class="method-permalink" href="#hook_syscall%28begin_addr%3AInt%3D1%2Cend_addr%3D0%2C%26callback%3A-%3E%29%3AUcLib%3A%3AUcHook-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Add hook to trace syscall.</p>
+
+<p>If <em>start</em> &lt; <em>end</em>, the <em>callback</em> is called only if related address is in range.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_map&#40;address:Int,size:Int,perms:Int&#61;UC_PROT_ALL&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_map</strong>(address : Int, size : Int, perms : Int = <span class="t">UC_PROT_ALL</span>)
+
+        <a class="method-permalink" href="#mem_map%28address%3AInt%2Csize%3AInt%2Cperms%3AInt%3DUC_PROT_ALL%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Map memory in for emulation.</p>
+
+<ul><li><em>address</em>: Starting address of the new memory region to be mapped in.</li><li><em>size</em>: Size of the new memory region to be mapped in.</li><li><em>perms</em>: Permissions for the newly mapped region.</li></ul>
+
+<p>Both <em>address</em> and <em>size</em> must be multiple of 4KB, or this will raise the exception <code><a href="../Unicorn/UcError.html">UcError</a>(error: <a href="../Unicorn.html#UC_ERR_ARG">UC_ERR_ARG</a>)</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_protect&#40;address:Int,size:Int,perms:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_protect</strong>(address : Int, size : Int, perms : Int)
+
+        <a class="method-permalink" href="#mem_protect%28address%3AInt%2Csize%3AInt%2Cperms%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Set memory permissions for emulation memory.</p>
+
+<ul><li><em>address</em>: Starting address of the new memory region to be modified</li><li><em>size</em>: Size of the memory region to be modified.</li><li><em>perms</em>:  New permissions for the mapped region.</li></ul>
+
+<p>Both <em>address</em> and <em>size</em> must be multiple of 4KB, or this will raise the exception <code><a href="../Unicorn/UcError.html">UcError</a>(error: <a href="../Unicorn.html#UC_ERR_ARG">UC_ERR_ARG</a>)</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_read&#40;address:Int,size:Int&#41;:Array&#40;UInt8&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_read</strong>(address : Int, size : Int) : Array(UInt8)
+
+        <a class="method-permalink" href="#mem_read%28address%3AInt%2Csize%3AInt%29%3AArray%28UInt8%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Read a range of bytes in memory.</p>
+
+<ul><li><em>address</em>:  starting memory address of bytes to get.</li><li><em>size</em>: size of memory to read.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_regions:Array&#40;Tuple&#40;UInt64,UInt64,UInt32&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_regions</strong> : Array(Tuple(UInt64, UInt64, UInt32))
+
+        <a class="method-permalink" href="#mem_regions%3AArray%28Tuple%28UInt64%2CUInt64%2CUInt32%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Retrieve all memory regions mapped by <code><a href="../Unicorn/Uc.html#mem_map%28address%3AInt%2Csize%3AInt%2Cperms%3AInt%3DUC_PROT_ALL%29-instance-method">#mem_map</a></code>.</p>
+
+<p>Each region is represented by a tuple of the form <code>{begin_addr, end_addr, permissions}</code></p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_unmap&#40;address:Int,size:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_unmap</strong>(address : Int, size : Int)
+
+        <a class="method-permalink" href="#mem_unmap%28address%3AInt%2Csize%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Unmap a region of emulation memory.</p>
+
+<ul><li><em>address</em>: Starting address of the memory region to be unmapped.</li><li><em>size</em>: size of the memory region to be modified.</li></ul>
+
+<p>Both <em>address</em> and <em>size</em> must be multiple of 4KB, or this will raise the exception <code><a href="../Unicorn/UcError.html">UcError</a>(error: <a href="../Unicorn.html#UC_ERR_ARG">UC_ERR_ARG</a>)</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_write&#40;address:Int,code:Array&#40;UInt8&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_write</strong>(address : Int, code : Array(UInt8))
+
+        <a class="method-permalink" href="#mem_write%28address%3AInt%2Ccode%3AArray%28UInt8%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Write to a range of bytes in memory.</p>
+
+<ul><li><em>address</em>: starting memory address of bytes to set.</li><li><em>code</em>: data to be written to memory.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_write&#40;address:Int,code:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_write</strong>(address : Int, code : String)
+
+        <a class="method-permalink" href="#mem_write%28address%3AInt%2Ccode%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Write to a range of bytes in memory from a String.</p>
+
+<ul><li><em>address</em>: starting memory address of bytes to set.</li><li><em>code</em>: data to be written to memory.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reg_read&#40;reg:Int&#41;:Int-instance-method">
+      <div class="signature">
+        
+        def <strong>reg_read</strong>(reg : Int) : Int
+
+        <a class="method-permalink" href="#reg_read%28reg%3AInt%29%3AInt-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Read register value.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reg_write&#40;reg:Int,value:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>reg_write</strong>(reg : Int, value : Int)
+
+        <a class="method-permalink" href="#reg_write%28reg%3AInt%2Cvalue%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Write to register.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
